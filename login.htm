@@ -1,0 +1,258 @@
+<html>
+<head>
+	<meta content="IE=5.0000" http-equiv="X-UA-Compatible">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta name="GENERATOR" content="MSHTML 11.00.9600.18538">
+		<!--
+     NOTE:
+     To include graphics on this page, place the graphics in the public subdirectory
+  	and use links such as:
+     <img src="/public/logo.gif">
+     It is important to use /public/ instead of just public/ since some EZproxy
+     login URLs are not be relative to /
+		--> 
+
+		<!-- 
+	This is login.htm from the docs subdirectory.  Review
+<a href="http://www.oclc.org/us/en/support/documentation/ezproxy/url/admin/">http://www.oclc.org/us/en/support/documentation/ezproxy/url/admin/</a>
+for information on how to create an administrative user account and
+<a href="http://www.oclc.org/us/en/support/documentation/ezproxy/usr/">www.oclc.org/us/en/support/documentation/ezproxy/usr/</a>
+for information on user authentication options.
+		 -->
+	
+	<title>Robert Gordon University Application - Login Page</title>
+	<link rel="STYLESHEET" type="text/css" href="/public/template.css">
+
+	<script language="JavaScript">
+	var loginDone = false;
+	
+	//for old browsers. To support document.getElementById
+	if(document.all && !document.getElementById) 
+	{    
+	    document.getElementById = function(id) 
+	    {
+	        return document.all[id];
+	    }
+	}
+	
+	function SubmitForm()
+	{    
+	    if (loginDone)
+	        return false;
+	    for (i = 0 ; i < document.form1.length ; i++)
+	    { 
+	        var tempobj = document.form1.elements[i];
+	        if (tempobj.type == 'text' || tempobj.type == 'password')
+	        {
+	            if (tempobj.value.toString() == "")
+	            {
+	                alert("Complete all the required fields before logging on.");
+	                SetFocus();
+	                return false;
+	            }
+	        }
+	    }
+	
+	    loginDone = true;
+	
+	
+	    return true;
+	}
+	
+	function ResetForm()
+	{    
+	    document.form1.reset();
+	    SetFocus();
+	    return false;
+	}
+	
+	function SetFocus()
+	{    
+	    if (document.form1.elements[0].value.toString() == "")
+	        document.form1.elements[0].focus();
+	    else if (document.form1.elements[1].value.toString() == "")
+	        document.form1.elements[1].focus();
+	    else
+	        document.form1.elements[2].focus();
+	}
+	
+	
+	function window_onload()
+	{
+	        
+	    if(document.body)
+	        document.body.style.overflow = "";
+	    SetFocus();    
+	}
+	
+	function keyDetect(e) 
+	{    
+	    if(!e) 
+	        e = window.event;
+	    if(!e) 
+	    {
+	        return; 
+	    }    
+	    var theKey = e.which ? e.which : (e.keyCode ? e.keyCode : (e.charCode ? e.charCode : 0));
+	    var agt = navigator.userAgent.toLowerCase();
+	    if (theKey == 13 || theKey == 3)
+	    {
+	        if(SubmitForm())
+	            document.form1.submit();
+	    }
+	}
+	
+	var capsLockNote = "Note: The Caps Lock key is on. Passwords are case-sensitive.";
+	</script>
+	<script language="JavaScript" src="/public/capsLock.js"></script>
+
+</head>
+
+<body height="100%" onload="window_onload();">
+<table height="100%" id="loginMainTable" width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+    	<tr>
+        	<td>
+            	<table align="center" class="blueBorder" cellspacing="0" cellpadding="0">    
+                	<tbody>
+                		<tr style="BACKGROUND-COLOR: transparent;">
+							<td id="rguLogo" width="100%" colspan="3" style="position:relative;">
+								<a href="http://www.rgu.ac.uk/"><img src="/public/rgulogo.gif" align="left"></a>
+							</td>
+						</tr>
+						<tr>
+							<td id="companyTD" width="100%" colspan="3" style="position:relative;">
+								<span class="header1 header1pos">		
+									Login to RGU Services	
+								</span>
+								<table width="100%" cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<td width="32px">							
+												<img src="/public/headertopl.gif" align="absmiddle">
+											</td>
+											<td style="background-image: url(./public/headertopm.gif); background-repeat: repeat-x">&nbsp;</td>
+											<td width="520px" style="background-image: url(./public/headertopr.gif);"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td width="100%" colspan="3" style="position:relative;">	
+								<span style="position:absolute;margin-left:20px;">		
+								</span>
+								<table width="100%" cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<td width="30px">							
+												<img src="./public/headerbottoml.gif" align="absmiddle">
+											</td>
+											<td style="background-image: url(./public/headerbottomm.gif); background-repeat: repeat-x">&nbsp;</td>
+											<td width="30px" style="background-image: url(./public/headerbottomr.gif);"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+			            <tr>
+			                <td class="contentleft"></td>
+			                <td align="center" class="internalTD">
+			                    <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+			                        <form id="form1" name="form1" autocomplete="off" method="post" action="/login" onsubmit="return(SubmitForm());">
+			                        <input type="hidden" name="url" value="https://link.springer.com/content/pdf/10.1007/s12599-013-0291-3.pdf" />
+			                        <tbody>
+			                        	<tr>
+			                            	<td valign="top">
+			                                	<table border="0" cellspacing="0" cellpadding="0" class="content">
+			                                		<tbody>
+			                                			<tr>
+			                                				<td class="msgText">Login</td>
+			                                    		</tr>
+			                                    	</tbody>
+			                                    </table>
+			                                	<table border="0" cellspacing="0" cellpadding="0" class="content">   
+			                                        <tbody>
+			                                        	<tr>
+			                                                <td class="paramText">User name:</td>
+			                                                <td><input class="paramTextbox" type="text" id="user_name" name="user" maxlength="50" size="11"></td>
+			                                            </tr>
+			                                            <tr>
+			                                                <td class="paramText">Password:</td>
+			                                                <td><input class="paramTextbox" type="password" id="password" name="pass" maxlength="40" onkeypress="capsDetect(arguments[0]);" size="11"></td>                                                
+			                                            </tr>
+				                                        <tr height="25px">
+				                                            <td colspan="2" id="capsLockTD">&nbsp;</td>
+				                                        </tr>
+				                                        <tr>
+				                                            <td colspan="2" align="right">
+				                                                <input border="0" class="button" type="submit" id="submit_button" value="Login">
+				                                            </td>
+				                                            <td></td>
+				                                        </tr>
+													</tbody>
+												</table>
+											</td>
+			                            </tr>                                                    
+			                        	<tr>
+			                                <td>
+			                                    <table cellspacing="0" cellpadding="0" class="content" width="100%">
+			                                        <tbody>
+			                                        	<tr>
+			                                            	<td id="openerExistsTD" class="notification" style="display:none">
+			                                            		For security purposes, when you finish working with this site do one of the following:<li>Click the Logoff button to log off from the site.</li><li>Close all browser windows (including applications that are open in other windows).</li>
+			                                            	</td>
+			                                        	</tr>
+				                                        <tr>
+				                                            <td class="notification">
+					                                            This site is intended for authorised users only.
+					                                            Should you require any assistance logging in <a href="http://www.rgu.ac.uk/current-students/its/logging-into-rgu-services" target="_parent">Click Here</a>.
+				                                            </td>
+				                                        </tr>
+			                                    	</tbody>
+			                                    </table>
+			                                </td>    
+			                            </tr>
+			                        </tbody>
+			                        </form>
+								</table>
+			              	</td>
+			            	<td class="contentright"></td>
+						</tr>
+						<tr>
+							<td width="100%" colspan="3" style="position:relative;">
+							<span class="bottomText bottomTextPos">		
+								©2016 IT Services Robert Gordon University. All rights reserved.</span>
+								<table width="100%" cellpadding="0" cellspacing="0">
+									<tbody>
+										<tr>
+											<td width="47px">							
+												<img src="./public/footerbgl.gif" align="absmiddle">
+											</td>
+											<td style="background-image: url(./public/footerbgm.gif); background-repeat: repeat-x">&nbsp;</td>
+											<td width="47px" style="background-image: url(./public/footerbgr.gif);"></td>
+										</tr>
+									</tbody>
+								</table>			
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>    
+	</tbody>
+</table>
+
+
+<script>
+if (window.opener && !window.opener.closed)
+{
+    document.getElementById("openerExistsTD").style.display = "";
+}
+</script>
+
+
+</body>
+</html>
